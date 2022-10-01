@@ -228,14 +228,14 @@
 
         <!-- Workspace Management -->
 
-        <key type="as" name="pop-workspace-down">
-            <default><![CDATA[['<Super><Shift>Down','<Super><Shift>KP_Down','<Super><Shift>j']]]></default>
-            <summary>Move window to the lower workspace</summary>
+        <key type="as" name="pop-workspace-left">
+            <default><![CDATA[['<Super><Shift>A','<Super><Shift>KP_Down','<Super><Shift>j']]]></default>
+            <summary>Move window to the leftward workspace</summary>
         </key>
 
-        <key type="as" name="pop-workspace-up">
-            <default><![CDATA[['<Super><Shift>Up','<Super><Shift>KP_Up','<Super><Shift>k']]]></default>
-            <summary>Move window to the upper workspace</summary>
+        <key type="as" name="pop-workspace-right">
+            <default><![CDATA[['<Super><Shift>D','<Super><Shift>KP_Up','<Super><Shift>k']]]></default>
+            <summary>Move window to the rightward workspace</summary>
         </key>
 
         <key type="as" name="pop-monitor-down">

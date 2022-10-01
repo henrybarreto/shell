@@ -172,37 +172,15 @@ function shortcuts(menu: any): any {
         return new St.Label({ text });
     }
 
-    function create_shortcut_label(text: string): any {
-        let label = create_label(text);
-        label.set_x_align(Clutter.ActorAlign.END);
-        return label;
-    }
+    // function create_shortcut_label(text: string): any {
+    //     let label = create_label(text);
+    //     label.set_x_align(Clutter.ActorAlign.END);
+    //     return label;
+    // }
 
     layout_manager.set_row_spacing(12);
     layout_manager.set_column_spacing(30);
     layout_manager.attach(create_label(_('Shortcuts')), 0, 0, 2, 1);
-
-    let launcher_shortcut = _("Super + /")
-    const cosmic_settings = Me.imports.settings.settings_new_id('org.gnome.shell.extensions.pop-cosmic')
-    if (cosmic_settings) {
-        if (cosmic_settings.get_enum('overlay-key-action') === 2) {
-            launcher_shortcut = _("Super")
-        }
-    }
-
-    [
-        [_('Launcher'), launcher_shortcut],
-        [_('Navigate Windows'), _('Super + Arrow Keys')],
-        [_('Toggle Tiling'), _('Super + Y')],
-    ].forEach((section, idx) => {
-        let key = create_label(section[0]);
-        key.get_clutter_text().set_margin_left(12);
-
-        let val = create_shortcut_label(section[1]);
-
-        layout_manager.attach(key, 0, idx + 1, 1, 1);
-        layout_manager.attach(val, 1, idx + 1, 1, 1);
-    });
 
     return item;
 }

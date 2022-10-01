@@ -12,7 +12,6 @@ import * as settings from 'settings';
 import * as log from 'log';
 
 interface AppWidgets {
-    fullscreen_launcher: any,
     inner_gap: any,
     mouse_cursor_follows_active_window: any,
     outer_gap: any,
@@ -78,12 +77,6 @@ function settings_dialog_new(): Gtk.Container {
         Settings.sync();
     });
 
-    app.fullscreen_launcher.set_active(ext.fullscreen_launcher())
-    app.fullscreen_launcher.connect('state-set', (_widget: any, state: boolean) => {
-        ext.set_fullscreen_launcher(state)
-        Settings.sync()
-    })
-
     return grid;
 }
 
@@ -123,17 +116,11 @@ function settings_dialog_view(): [AppWidgets, Gtk.Container] {
         xalign: 0.0
     })
 
-    const fullscreen_launcher_label = new Gtk.Label({
-        label: "Allow launcher over fullscreen window",
-        xalign: 0.0
-    })
-
     const [inner_gap, outer_gap] = gaps_section(grid, 7);
 
     const settings = {
         inner_gap,
         outer_gap,
-        fullscreen_launcher: new Gtk.Switch({ halign: Gtk.Align.END }),
         smart_gaps: new Gtk.Switch({ halign: Gtk.Align.END }),
         snap_to_grid: new Gtk.Switch({ halign: Gtk.Align.END }),
         window_titles: new Gtk.Switch({ halign: Gtk.Align.END }),
@@ -149,9 +136,6 @@ function settings_dialog_view(): [AppWidgets, Gtk.Container] {
 
     grid.attach(smart_label, 0, 2, 1, 1)
     grid.attach(settings.smart_gaps, 1, 2, 1, 1)
-
-    grid.attach(fullscreen_launcher_label, 0, 3, 1, 1)
-    grid.attach(settings.fullscreen_launcher, 1, 3, 1, 1)
 
     grid.attach(show_skip_taskbar_label, 0, 4, 1, 1)
     grid.attach(settings.show_skip_taskbar, 1, 4, 1, 1)

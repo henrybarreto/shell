@@ -15,7 +15,6 @@ export class Keybindings {
     constructor(ext: Ext) {
         this.ext = ext;
         this.global = {
-            "activate-launcher": () => ext.window_search.open(ext),
             "tile-enter": () => ext.tiler.enter(ext)
         };
 
@@ -58,9 +57,9 @@ export class Keybindings {
 
             "pop-monitor-down": () => ext.move_monitor(Meta.DisplayDirection.DOWN),
 
-            "pop-workspace-up": () => ext.move_workspace(Meta.DisplayDirection.UP),
+            "pop-workspace-left": () => ext.move_workspace(Meta.DisplayDirection.UP),
 
-            "pop-workspace-down": () => ext.move_workspace(Meta.DisplayDirection.DOWN)
+            "pop-workspace-right": () => ext.move_workspace(Meta.DisplayDirection.DOWN)
         };
     }
 

@@ -9,7 +9,6 @@ export function addMenu(widget: any, request: (menu: St.Widget) => void): St.Wid
     menu.actor.hide()
     menu.actor.add_style_class_name('panel-menu');
 
-    // Intercept right click events on the launcher app's button
     widget.connect('button-press-event', (_: any, event: any) => {
         if (event.get_button() === 3) {
             request(menu)
