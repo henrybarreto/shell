@@ -98,6 +98,10 @@ These are key to many of the shortcuts utilized by tiling window managers. This 
 - `Super` + `e`: Email
 - `Super` + `b`: Web Browser
 - `Super` + `t`: Terminal
+- `Super` + `a`: Move to workspace on left
+- `Super` + `d`: Move to workspace on right
+- `Super` + `Shift` + `a`: Move a window to workspace on left
+- `Super` + `Shift` + `d`: Move a window to workspace on right
 
 ### Window Management Mode
 
